@@ -69,4 +69,4 @@ if __name__ == "__main__":
         exit(log.info("exiting."))
 
     for url in dyndns_url.split(","):
-        update(url)
+        log.info(update(url))
