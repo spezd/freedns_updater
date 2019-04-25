@@ -50,7 +50,9 @@ def changed(ipaddr):
         log.info("cache file update : %s", ipaddr)
         with open(filename, "wt") as ofp:
             ofp.write(ipaddr)
-        lastip = ipaddr
+
+        # return update status if cache file is missing.
+        return True
 
     with open(filename, "rt") as fp:
         lastip = fp.readline().strip()
